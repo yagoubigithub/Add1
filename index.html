@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Add">
+    <meta name="keywords" content="Add">
+    <meta name="author" content="yagoubi aek add">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>YagoubiAEK</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-toggleable-sm  fixed-top">
+        <a href="index.html" class="navbar-brand">
+            <h1>ADD</h1>
+        </a>
+    </nav>
+    <div class="jumbotron add-space-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-sm-12">
+                    <div class="table-responsive">
+                        <table class="table table-responsive">
+                            <thead class="thead-inverse" id="thead">
+                                <tr id="tr-thead">
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                                <tr id="tr-tbody">
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <button type="text" class="btn btn-secondary btn-sm" id="btn-add">اظف قيمة</button>
+                    <button type="text" class="btn btn-defualt btn-sm" id="btn-reset">اعادة</button>
+                    <button type="text" class="btn btn-primary btn-sm" id="btn-calcul">احسب</button>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm">
+                        <div id="sort">The sorted table is (ترتيب القيم) :</div>
+                        <div id="max">The Max is (القيمة الاكبر) :</div>
+                        <div id="min">The Min is (القيمة الاصغر) :</div>
+                        <div id="mean">The Mean is (المعدل) :</div>
+                        <div id="median">The Median(Q2) is (الوسيط):</div>
+                        <div id="q1">The Quartile(Q1) is :</div>
+                        <div id="q3">The Quartile(Q3) is :</div>
+                        <div id="mode">The Mode عدد التكرارات is :</div>
+                        <div id="range">The Range (MAX - MIN) is النطاق :</div>
+                        <div id="q_range">The INTERQUARTILE RANGE (Q3 - Q1) is النطاق الربيعي :</div>
+                        <div id="variance">The Variance is :</div>
+                        <div id="sd">The standard deviation is :</div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="container">
+        <div class="row add-space-top">
+            <div class="col-sm-6">
+                <h4 class="center">ترتيب قيم الجدول</h4>
+                <p dir="rtl">هي ترتيب قيم الجدول (تصاعديا) يعني من اصغر قيمة الى اكبر قيمة ,هناك عدة خوارزميات للترتيب الجدول سواء تنازليا
+                    او تصاعديا لكن لست مدطرا ان تفكر في الخوارزمية لان اغلب لغات البرمجة لديها دوال لترتيب قيم الجدول مثل
+                    (java, javascript,python ...etc) </p>
+            </div>
+            <div class="col-sm-6">
+                <div class="editor">
+                    <span class="comment">//Code javaScript</span>
+                    <br>
+                    <span>tab = [1,0,9,-3,4,8,9,1,10,22,5];</span>
+                    <br>
+                    <span> tab = tab.
+                        <span class="code">sort</span>(
+                        <span class="code">function</span> (a, b) {
+                        <span class="code">return</span> a - b });</span>
+                    <br>
+                    <span>console.
+                        <span class="code">log</span>(tab)</span>
+                </div>
+                <div class="card">
+                    <h4 class="card-title">Result</h4>
+                    <div class="card-block">[-3, 0, 1, 1, 4, 5, 8, 9, 9, 10, 22]</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row add-space-top">
+            <div class="col-sm-6">
+                <div class="editor">
+                    <span class="comment">//Code javaScript</span>
+                    <br>
+                    <span>tab = [1,0,9,-3,4,8,9,1,10,22,5];</span>
+                    <br>
+                    <span> tab = tab.
+                        <span class="code">sort</span>(
+                        <span class="code">function</span> (a, b) {
+                        <span class="code">return</span> a - b });</span>
+                    <br>
+                    <span class="comment">//استخراج عدد قيم الجدول</span>
+                    <br>
+                    <span class="code">var</span> len = tab.length;
+                    <br>
+                    <span class="comment">//استخراج اخر قيمة في الجدول</span>
+                    <br>
+                    <span class="code">var</span> max = tab[ len - 1 ];
+                    <br>
+                    <span class="comment">//استخراج اول قيمة في الجدول</span>
+                    <br>
+                    <span class="code">var</span> min = tab[ 0 ];
+                    <br>
+                    <span>console.
+                        <span class="code">log</span>("max = "+max);</span>
+                    <br>
+                    <span>console.
+                        <span class="code">log</span>("min = "+min);</span>
+                </div>
+                <div class="card">
+                    <h4 class="card-title">Result</h4>
+                    <div class="card-block">
+                        max = 22
+                        <br> min = -3
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h4 class="center">استخراج القيمة الاكبر والاصغر في الجدول</h4>
+                <p dir="rtl">هذا يكون سهل بعد ترتيب قيم الجدول من الاصغر الى الاكبر ,كل ما عليك هو استخراج القيمة الاخيرة التي تمثل القيمة
+                    الاكبر و استخراج القيمة الاولى التي تمثل القيمة الاصغر في الجدول . </p>
+            </div>
+
+
+        </div>
+        <div class="row add-space-top">
+            <div class="col-sm-6">
+                <h4 class="center"> : (Mean) استخراج المعدل </h4>
+                <p dir="rtl">
+                    اسنخراج المعدل هو ببساطة جمع كل قيم الجدول وتقسيمها على عدد قيم الجدول
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <div class="editor">
+                    <span class="comment">//javaScript code</span>
+                    <br>
+                    <span class="comment">//دالة حساب المعدل</span>
+                    <br>
+                    <span class="code">function</span> Mean(tab) {
+                    <br>
+                    <div class="tab">
+                        <span class="code">var</span> somme = 0;
+                        <br>
+                        <span class="comment">//جمع جميع قيم الجدول</span>
+                        <br> for (
+                        <span class="code">var</span> i
+                        <span class="code">in</span> tab) {
+                        <br>
+                        <div class="tab">somme = somme + tab[i];</div>
+                        }
+                        <br>
+                        <span class="comment">// تقسيم ناتج الجمع على عدد قيم الجدول </span>
+                        <br>
+                        <span class="code">return</span> (somme / tab.length).toFixed(2);
+                        <br>
+                        <div class="comment">//toFixed</div>
+                        <span class="comment">// ملاحظة : هي دالة للتحديد عدد الارقام بعد الفاصلة </span>
+                    </div>
+                    }
+                    <br>
+                    <span>tab = [1,0,9,-3,4,8,9,1,10,22,5];</span>
+                    <br> console.
+                    <span class="code">log</span>("mean = " + Mean(tab));
+
+                </div>
+                <div class="card">
+                    <h4 class="card-title">Result</h4>
+                    <div class="card-block">mean = 6.00</div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row add-space-top">
+            <div class="col-sm-7">
+                <div class="editor">
+
+                    <span class="code">function</span> Q2(tab) {
+                    <br>
+                    <div class="tab">
+                        <span class="code">if</span> (tab.length % 2 == 0) {
+
+                        <br>
+                        <div class="tab">
+                            <span class="code">return</span> (tab[(tab.length / 2) - 1] + tab[tab.length / 2]) / 2;<br>
+                         }else{
+                             <br>
+                            <span class="code" >return</span> tab[parseInt(tab.length / 4)];
+                            <br>
+                         }
+                                                  
+                        </div>           
+                    </div>
+                    }
+                    <br>
+                    <span>tab = [1,0,9,-3,4,8,9,1,10,22,5];</span>
+                    <br> console.
+                    <span class="code">log</span>("Q2 = " + Q2(tab));
+                </div>
+                <div class="card">
+                        <h4 class="card-title">Result</h4>
+                        <div class="card-block">Q2 = 9</div>
+                    </div>
+
+            </div>
+            <div class="col-sm-5">
+                <h4 class="center"> : (Median (Q2)) استخراج الوسيط </h4>
+                <p dir="rtl">
+                    بعد ترتيب الجدول لديك حالتين في حساب الوسيط :
+                    <br>
+                    <b>الحالة الاولى هي عدد القيم فردي:</b> اذا ببساطة القيمة التي في وسط الجدول هي الوسيط
+
+                    <br>
+                    <b>الحالة الثانية هي عدد القيم زوجي:</b>
+
+                    في هذه الحالة الوسيط هو معدل القيمتين اللتان في نصف الجدول اي نقسم القيمتين اللتان في نصف الجدول على اثنين
+
+                    <br> لكن كيف نعرف اذا كان العدد زوجي او فردي في البرمجة ?
+                    <br> عادتا ما يستعمل باقي القسمة على 2
+                    <br> اذا كان الباقي يساوي 0 فهو عدد زوجي
+                    <br> اذا كان الباقي يساوي 1 فهو عدد فردي
+                    <br> اذا اولا يجب معرفة اذا كان عدد القيم زوجي او فردي ثم نستخرج الوسيط .
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
